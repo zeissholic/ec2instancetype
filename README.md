@@ -40,7 +40,8 @@ In addition, the output shows AZ ID, which enables you to determine the location
 https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html   
 
 In my AWS account it matches as below.  
-<img src="./images/az_id.png" width="525" height="215" />
+   
+<img src="./images/az_id.png" width="525" height="265" />
 
 ---
 

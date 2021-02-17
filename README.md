@@ -80,7 +80,7 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
 ...
 ```
 
-### 3.to get all instance family in specific region (not include size of instances like .large or .medium)
+### 3.to get all instance family in specific region (not include size of instances)
 You can use -f argument to get all instance family in AZ and region.
 ```console
 python3 ec2instancetype.py -r ap-northeast-2 -i % -f -p <AWS profile name>

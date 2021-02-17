@@ -18,7 +18,7 @@ aws configure --profile <profile name>
 #### If you want to use your default AWS credentials, you can remove -p argument in the command.
 
 You need IAM permissions as below  
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [

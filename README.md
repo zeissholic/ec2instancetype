@@ -16,7 +16,8 @@ aws configure --profile <profile name>
 ```
 
 In addition, the output shows AZ ID, which enables you to determine the location of resources in one account relative to the resources in another account.  
-https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html 
+https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html   
+
 ---
 
 ###Here are some sample command to run the code

@@ -16,7 +16,7 @@ You can use below to use not default profile
 aws configure --profile <profile name>
 ```
 
-You need IAM permittion as below  
+You need IAM permissions as below  
 ```
 {
     "Version": "2012-10-17",

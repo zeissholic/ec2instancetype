@@ -62,3 +62,35 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
                     "c5a.16xlarge",
 ...
 ```
+
+### 3.to get all instance family in specific region (not include size of instances like .large or .medium)
+You can use -f argument to get all instance family in AZ and region.
+```
+python3 ec2instancetype.py -r ap-northeast-2 -i % -f -p <AWS profile name>
+```
+The output shows which AZ has all instance type in the region (ap-northeast-2)
+```
+[
+     {
+          "ap-northeast-2": {
+               "apne2-az1": [
+                    "c4",
+                    "c5",
+                    "c5a",
+                    "c5d",
+                    "c5n",
+                    "c6g",
+                    "d2",
+                    "g3",
+                    "g3s",
+                    "g4dn",
+                    "i2",
+                    "i3",
+                    "i3en",
+                    "inf1",
+                    "m4",
+                    "m5",
+                    "m5a",
+                    "m5ad",
+...
+```

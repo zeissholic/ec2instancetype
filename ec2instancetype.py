@@ -9,9 +9,7 @@ def main(argv):
     family_only_yn = ""
 
     try:
-        # opts: getopt 옵션에 따라 파싱 ex) [('-i', 'myinstancce1')]
-        # etc_args: getopt 옵션 이외에 입력된 일반 Argument
-        # argv 첫번째(index:0)는 파일명, 두번째(index:1)부터 Arguments
+        # opts: getopt 옵션에 따라 파싱 
         opts, etc_args = getopt.getopt(argv[1:], \
                                  "hr:i:p:f", ["help","region=","chaninstancenel=","profile=","family="])
 
@@ -71,6 +69,7 @@ def main(argv):
 
     #sort_order = ['nano','micro', 'small', 'medium', 'large', 'xlarge', '2xlarge', '4xlarge', '8xlarge', '12xlarge','16xlarge', '20xlarge', '24xlarge', '.metal'] 
 
+    # 조건에 맞는 리전마다 
     for region in sorted([regions['RegionName'] for regions in client.describe_regions(
         Filters=[{'Name': 'region-name', 'Values': myregion},],
     )['Regions']]): # 리전별
@@ -81,13 +80,14 @@ def main(argv):
 
         instancetypeDICT.insert(r,{region:{}})
 
+        # 해당 리전의 AZ마다
         for azid in sorted([azs['ZoneId'] for azs in client.describe_availability_zones(
         Filters=[{'Name': 'region-name', 'Values': [region,]},],
         )['AvailabilityZones']]): # AZ별
 
             tempDICT.clear()
             instanceFamilyDICT.clear()
-            #print('   '+azid)
+            # 원하는 인스턴스 유형별
             for itype in sorted([instancetype['InstanceType'] for instancetype in client.describe_instance_type_offerings(
                 LocationType='availability-zone-id',
                 Filters=[{'Name': 'location','Values': [azid,]},
@@ -102,15 +102,11 @@ def main(argv):
 
                 # tempDICT.insert(i, (itype.split('.')[0], itype.split('.')[1]))
                 i += 1
-            # dedupe
+            # deduplicate 중복제거
             if family_only_yn :
                 for k in range(len(instanceFamilyDICT)): 
                     if instanceFamilyDICT[k] not in instanceFamilyDICT[k + 1:]: 
                         tempDICT.append(instanceFamilyDICT[k]) 
-
-            # sorting the instance type
-            # sorted(tempDICT, key=lambda i:sort_order.index(i[0]))
-            # print(tempDICT)
 
             if i > 0:
                 instancetypeDICT[r][region][azid]= json.loads(json.dumps(tempDICT))
@@ -119,10 +115,9 @@ def main(argv):
 
             i = 0
             a += 1
-            #tempSTR = ""
 
         r += 1    
-    
+    # 출력 
     instancetypeJSON = json.dumps(instancetypeDICT, indent=5)
     
     print(instancetypeJSON)

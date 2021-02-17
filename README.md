@@ -144,3 +144,11 @@ to get AZ and Asia Pacific region having .micro instance type
 ```console
 python3 ec2instancetype.py -r ap% -i %.micro -f -p <AWS profile name>
 ```
+to get AZ having g4dn instance type in ap-northeas-1 and ap-south-1 
+```console
+python3 ec2instancetype.py -r ap-northeast-1,ap-south-1 -i g4dn.% -f -p <AWS profile name>
+```
+to check if two or more instance types are supported in AZ and region  
+```console
+python3 ec2instancetype.py -r ap-northeast-2 -i g4dn.%,m6g% -p <AWS profile name>
+```

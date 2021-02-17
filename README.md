@@ -28,7 +28,7 @@ and avaiable instance type in https://aws.amazon.com/ec2/instance-types/?nc1=h_l
 
 
 
-### 1.to get supported instance type in specific AZ and region
+### 1. to get supported instance type in specific AZ and region
 ```console
 python3 ec2instancetype.py -r ap-northeast-2 -i g4dn.2xlarge -p <AWS profile name>
 ```
@@ -50,7 +50,7 @@ The output shows which AZ has the instance type in the region (ap-northeast-2)
 ]
 ```
 
-### 2.to get all instance type in specific region
+### 2. to get all instance type in specific region
 You can use % for instance type argument to get all instance types in AZ and region.
 ```console
 python3 ec2instancetype.py -r ap-northeast-2 -i % -p <AWS profile name>
@@ -80,7 +80,7 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
 ...
 ```
 
-### 3.to get all instance family in specific region (not include size of instances)
+### 3. to get all instance family in specific region (not include size of instances)
 You can use -f argument to get all instance family in AZ and region.
 ```console
 python3 ec2instancetype.py -r ap-northeast-2 -i % -f -p <AWS profile name>
@@ -112,7 +112,7 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
 ...
 ```
 
-### 4.to find az and region having a specific instance type
+### 4. to find az and region having a specific instance type
 You can use % for region argument.
 ```console
 python3 ec2instancetype.py -r % -i g4dn.2xlarge -p <AWS profile name>
@@ -135,7 +135,7 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
      },
 ...
 ```
-### 5.other samples
+### 5. other samples
 to get AZ and Asia Pacific region having g4dn instance type 
 ```console
 python3 ec2instancetype.py -r ap% -i g4dn.% -f -p <AWS profile name>

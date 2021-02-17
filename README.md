@@ -16,8 +16,29 @@ You can use below to use not default profile
 aws configure --profile <profile name>
 ```
 
+You need IAM permittion as below  
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstanceTypeOfferings",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeRegions"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+
 In addition, the output shows AZ ID, which enables you to determine the location of resources in one account relative to the resources in another account.  
 https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html   
+
 
 ---
 

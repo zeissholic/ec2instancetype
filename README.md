@@ -15,6 +15,7 @@ You can use below to use not default profile
 ```console
 aws configure --profile <profile name>
 ```
+#### If you want to use your default AWS credentials, you can remove -p argument in the command.
 
 You need IAM permissions as below  
 ```
@@ -50,7 +51,7 @@ In my AWS account it matches as below.
 You can find the region code in https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html 
 and avaiable instance type in https://aws.amazon.com/ec2/instance-types/?nc1=h_ls
 
-#### If you want to use your default AWS credentials, you can remove -p argument in the command.
+
 
 ### 1. to get supported instance type in specific AZ and region
 ```console

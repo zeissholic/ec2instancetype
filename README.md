@@ -58,7 +58,7 @@ and avaiable instance type in https://aws.amazon.com/ec2/instance-types/?nc1=h_l
 python3 ec2instancetype.py -r ap-northeast-2 -i g4dn.2xlarge -p <AWS profile name>
 ```
 The output shows which AZ has the instance type in the region (ap-northeast-2)
-```console
+```json
 [
      {
           "ap-northeast-2": {
@@ -81,7 +81,7 @@ You can use % for instance type argument to get all instance types in AZ and reg
 python3 ec2instancetype.py -r ap-northeast-2 -i % -p <AWS profile name>
 ```
 The output shows which AZ has all instance type in the region (ap-northeast-2)
-```console
+```json
 [
      {
           "ap-northeast-2": {
@@ -111,7 +111,7 @@ You can use -f argument to get all instance family in AZ and region.
 python3 ec2instancetype.py -r ap-northeast-2 -i % -f -p <AWS profile name>
 ```
 The output shows which AZ has all instance type in the region (ap-northeast-2)
-```console
+```json
 [
      {
           "ap-northeast-2": {
@@ -143,7 +143,7 @@ You can use % for region argument.
 python3 ec2instancetype.py -r % -i g4dn.2xlarge -p <AWS profile name>
 ```
 The output shows which AZ has all instance type in the region (ap-northeast-2)
-```console
+```json
 [
      {
           "ap-northeast-1": {

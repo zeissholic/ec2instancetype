@@ -3,6 +3,18 @@
 This python code is for descibing ec2 instance types supported in each availability zones(AZ) and regions in AWS. 
 
 ### to run the code: it requires python 3.x and boto3, sys, getopt, json libraries.
+---
+
+## Before start
+You need to install AWS CLI and configure credential file settings.
+(Installing, updating, and uninstalling the AWS CLI version 2) https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+(Configuration and credential file settings) https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
+
+You can use below to use not default profile
+```
+aws configure --profile <profile name>
+```
+---
 
 Hear are some sample command to run the code
 
@@ -93,4 +105,33 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
                     "m5a",
                     "m5ad",
 ...
+```
+
+### 4.to find az and region having a specific instance type
+You can use % for region argument.
+```
+python3 ec2instancetype.py -r % -i g4dn.2xlarge -p <AWS profile name>
+```
+The output shows which AZ has all instance type in the region (ap-northeast-2)
+```
+[
+     {
+          "ap-northeast-1": {
+               "apne1-az1": [
+                    "g4dn.2xlarge"
+               ],
+               "apne1-az2": [
+                    "g4dn.2xlarge"
+               ],
+               "apne1-az4": [
+                    "g4dn.2xlarge"
+               ]
+          }
+     },
+...
+```
+### 5.other samples
+to get AZ and Asia Pacific region having g4dn instance type 
+```
+python3 ec2instancetype.py -r ap% -i g4dn.% -f -p <AWS profile name>
 ```

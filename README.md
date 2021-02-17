@@ -1,4 +1,4 @@
-# ec2instancetype
+# EC2 instance type supported in AZ and region
 
 This python code is for descibing ec2 instance types supported in each availability zones(AZ) and regions in AWS. 
 

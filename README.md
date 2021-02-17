@@ -20,7 +20,7 @@ https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html
 
 ---
 
-###Here are some sample command to run the code
+### Here are some sample command to run the code
 
 You can find the region code in https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html 
 and avaiable instance type in https://aws.amazon.com/ec2/instance-types/?nc1=h_ls

@@ -13,7 +13,7 @@ You need to install AWS CLI and configure credential file settings.
 
 You can use below to use not default profile  
 ```
-aws configure --profile <profile name>
+aws configure <span style="color:red">--profile <profile name></span>
 ```
 
 In addition, the output shows AZ ID, which enables you to determine the location of resources in one account relative to the resources in another account.  

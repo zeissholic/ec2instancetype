@@ -12,8 +12,8 @@ You need to install AWS CLI and configure credential file settings.
 (Configuration and credential file settings) https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html  
 
 You can use below to use not default profile  
-```
-aws configure <span style="color:red">--profile <profile name></span>
+```console
+aws configure --profile <profile name>
 ```
 
 In addition, the output shows AZ ID, which enables you to determine the location of resources in one account relative to the resources in another account.  
@@ -29,11 +29,11 @@ and avaiable instance type in https://aws.amazon.com/ec2/instance-types/?nc1=h_l
 
 
 ### 1.to get supported instance type in specific AZ and region
-```
+```console
 python3 ec2instancetype.py -r ap-northeast-2 -i g4dn.2xlarge -p <AWS profile name>
 ```
 The output shows which AZ has the instance type in the region (ap-northeast-2)
-```
+```console
 [
      {
           "ap-northeast-2": {
@@ -52,11 +52,11 @@ The output shows which AZ has the instance type in the region (ap-northeast-2)
 
 ### 2.to get all instance type in specific region
 You can use % for instance type argument to get all instance types in AZ and region.
-```
+```console
 python3 ec2instancetype.py -r ap-northeast-2 -i % -p <AWS profile name>
 ```
 The output shows which AZ has all instance type in the region (ap-northeast-2)
-```
+```console
 [
      {
           "ap-northeast-2": {
@@ -82,11 +82,11 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
 
 ### 3.to get all instance family in specific region (not include size of instances like .large or .medium)
 You can use -f argument to get all instance family in AZ and region.
-```
+```console
 python3 ec2instancetype.py -r ap-northeast-2 -i % -f -p <AWS profile name>
 ```
 The output shows which AZ has all instance type in the region (ap-northeast-2)
-```
+```console
 [
      {
           "ap-northeast-2": {
@@ -114,11 +114,11 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
 
 ### 4.to find az and region having a specific instance type
 You can use % for region argument.
-```
+```console
 python3 ec2instancetype.py -r % -i g4dn.2xlarge -p <AWS profile name>
 ```
 The output shows which AZ has all instance type in the region (ap-northeast-2)
-```
+```console
 [
      {
           "ap-northeast-1": {
@@ -137,10 +137,10 @@ The output shows which AZ has all instance type in the region (ap-northeast-2)
 ```
 ### 5.other samples
 to get AZ and Asia Pacific region having g4dn instance type 
-```
+```console
 python3 ec2instancetype.py -r ap% -i g4dn.% -f -p <AWS profile name>
 ```
 to get AZ and Asia Pacific region having .micro instance type 
-```
+```console
 python3 ec2instancetype.py -r ap% -i %.micro -f -p <AWS profile name>
 ```

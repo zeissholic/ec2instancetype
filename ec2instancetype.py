@@ -1,4 +1,8 @@
-import boto3, sys, getopt, json
+import boto3
+import botocore
+import sys
+import getopt
+import json
 
 def main(argv):
 
@@ -54,8 +58,12 @@ def main(argv):
         boto3.setup_default_session(profile_name=profile_name) # AWS 프로파일을 지정한 경우
     else:
         boto3.setup_default_session() # 디폴트 프로파일 사용
-
-    client = boto3.client('ec2')
+    
+    try:
+        client = boto3.client('ec2')
+    except botocore.exceptions.NoRegionError as error:
+        print("AWS CLI configuration error!") 
+        sys.exit(2)
     #aws_regions = ec2.describe_regions()
 
     instancetypeDICT = []

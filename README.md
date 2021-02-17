@@ -41,7 +41,7 @@ https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html
 
 In my AWS account it matches as below.  
    
-<img src="./images/az_id.png" width="525" height="265" />
+<img src="./images/az_id.png" width="405" height="309" />
 
 ---
 
